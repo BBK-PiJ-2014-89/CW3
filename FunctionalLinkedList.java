@@ -17,20 +17,4 @@ public class FunctionalLinkedList extends LinkedList implements FunctionalList {
 		}
 		return list;
 	}
-
-	public static void main(String[] args) {
-		FunctionalLinkedList list=new FunctionalLinkedList();
-		
-		list.add(11);
-		list.add(12);
-		list.add(13);
-		list.add(14);
-		list.add(15);
-		list.print();
-		
-		System.out.println("head <"+list.head()+">");
-		System.out.println("rest <"+list.rest()+">");
-		System.out.println("rest <"+list.rest().get(0)+">");
-		
-	}
 }

@@ -49,7 +49,6 @@ public class ArrayList implements List {
 		if(isAlmostFull())reserveMoreMemory();
 		if(item==null) return new ReturnObjectImpl(ErrorMessage.INVALID_ARGUMENT);
 		ReturnObject current=get(index);
-		
 		if(!current.hasError()){
 			for(int i=size;i>=index;i--){
 				objectArray[i+1]=objectArray[i];
@@ -62,7 +61,8 @@ public class ArrayList implements List {
 	@Override
 	public ReturnObject add(Object item) {
 		if(isAlmostFull())reserveMoreMemory();
-		ReturnObject current=new ReturnObjectImpl(item);
+		//ReturnObject current=new ReturnObjectImpl(item);
+		Object current=item;
 		if(item==null){
 			return new ReturnObjectImpl(ErrorMessage.INVALID_ARGUMENT);
 		}else{
@@ -86,33 +86,4 @@ public class ArrayList implements List {
 	  }
 	  this.objectArray = biggerArray;
     }
-    
-	public void print(){
-		for (int i=0;i<size();i++){
-			System.out.println("["+i+"]"+"["+objectArray[i]+"]");
-		}
-	}
-	
-	//main() for testing
-	public static void main(String[] args) {
-		ArrayList list=new ArrayList();
-		list.add(10);
-		list.add(11);
-		list.add(12);
-		list.add(13);
-		list.add(14);
-		list.add(15);
-		list.add(16);
-		list.add(17);
-		list.add(18);
-		list.print();
-
-		list.add(1,2);
-		
-		System.out.println(list.get(11));
-		System.out.println("[]");
-
-		list.print();
-	}
-
 }

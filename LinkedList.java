@@ -76,14 +76,4 @@ public class LinkedList implements List {
 	public String toString(){
 		return ""+obj;
 	}
-	
-	public void print(){
-		LinkedList current=next;
-		int i=0;
-		while(current!=null){
-			System.out.println("["+i+"]"+"["+current.toString()+"]");	
-			current=current.next;
-			i++;
-		}
-	}
 }

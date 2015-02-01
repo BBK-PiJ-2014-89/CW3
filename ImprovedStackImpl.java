@@ -1,50 +1,55 @@
 
-public class ImprovedStackImpl implements ImprovedStack {
+public class ImprovedStackImpl implements ImprovedStack{
+	private List list;
 	
 	public ImprovedStackImpl() {
-		// TODO Auto-generated constructor stub
+		list=new ArrayList();
 	}
 
 	@Override
 	public boolean isEmpty() {
-		// TODO Auto-generated method stub
-		return false;
+		return list.isEmpty();
 	}
 
 	@Override
 	public int size() {
-		// TODO Auto-generated method stub
-		return 0;
+		return list.size();
 	}
 
 	@Override
 	public void push(Object item) {
-		// TODO Auto-generated method stub
-
+		list.add(item);
 	}
 
 	@Override
 	public ReturnObject top() {
-		// TODO Auto-generated method stub
-		return null;
+		return list.get(size()-1);
 	}
 
 	@Override
 	public ReturnObject pop() {
-		// TODO Auto-generated method stub
-		return null;
+		ReturnObject temp=top();
+		list.remove(size()-1);
+		return temp;
 	}
 
 	@Override
 	public ImprovedStack reverse() {
-		// TODO Auto-generated method stub
-		return null;
+		ImprovedStackImpl newStack=new ImprovedStackImpl();
+		for(int i=size()-1;i>=0;i--){
+			Object temp=list.get(i).getReturnValue();
+			newStack.push(temp);
+		}
+		return newStack;
 	}
 
 	@Override
 	public void remove(Object object) {
-		// TODO Auto-generated method stub
-
+		for(int i=0;i<size();i++){    
+			if(list.get(i).getReturnValue().equals(object)){
+				list.remove(i);
+				i--;
+			}
+		}
 	}
-
 }

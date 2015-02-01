@@ -32,23 +32,4 @@ public class StackImpl extends AbstractStack{
 			return new ReturnObjectImpl(ErrorMessage.EMPTY_STRUCTURE);
 		}else return internalList.remove(size()-1);
 	}
-	
-	
-	public static void main(String[] args) {
-		LinkedList list=new LinkedList();
-		StackImpl stack=new StackImpl(list);
-		
-		stack.push(1);
-		stack.push(1);
-		stack.push(1);
-		stack.push(2);
-
-		list.print();
-		System.out.println(stack.top());
-		list.print();
-		System.out.println(stack.pop());
-		list.print();
-
-	}
-
 }

@@ -15,20 +15,4 @@ public class FunctionalArrayList extends ArrayList implements FunctionalList {
 		}
 		return list;
 	}
-	
-	public static void main(String[] args) {
-		FunctionalArrayList list=new FunctionalArrayList();
-		
-		list.add(11);
-		list.add(12);
-		list.add(13);
-		list.add(14);
-		list.add(15);
-		list.print();
-		
-		System.out.println("head <"+list.head()+">");
-		System.out.println("rest <"+list.rest()+">");
-		
-	}
-
 }
